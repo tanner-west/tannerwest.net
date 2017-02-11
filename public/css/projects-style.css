@@ -24,8 +24,8 @@ h1 {
 	width: 60px;
 	height: 60px;
 	background-color: white;
-	bottom: 10px;
-	right: 10px;
+	bottom: 15px;
+	right: 15px;
 	border-radius: 60px;
 	box-shadow: 0px 0px 10px 5px #720292;
 }
@@ -40,9 +40,15 @@ h1 {
 	width: 60px;
 	height: 60px;
 	background-color: white;
-	bottom: 10px;
-	right: 80px;
+	bottom: 15px;
+	right: 95px;
 	box-shadow: 0px 0px 10px 5px #720292;
+}
+
+#github:hover, #visit:hover {
+	box-shadow: 0px 0px 10px 5px #75CA00;
+
+
 }
 .flip-container-mobile {
 
