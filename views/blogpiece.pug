@@ -1,0 +1,89 @@
+doctype html
+head
+  link(href='https://fonts.googleapis.com/css?family=Knewave|Lora|Open+Sans' rel='stylesheet')
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+
+  style
+    include bootstrap.css
+    include site-style.css
+
+body
+  div.row#nav-row.navbar-fixed-top
+      div#affixed
+        div.col-md-2
+        div.col-md-8
+          div.row#logo-nav-row
+            div.col-md-6.col-xs-12
+              a(href='tannerwest.net' title='tanner west . net')
+               h1#logo TANNER WEST . NET
+            div.col-md-6.col-xs-12
+              ul#nav
+                li#active Blog
+                li Projects
+                li Contact
+        div.col-md-2
+  div.container
+
+    div.row
+      div.col-md-2
+      div.col-md-8
+        h1#title Beginning JavaScript Taught by a JavaScript Beginner
+        div.col-md-12
+          span.tag #JavaScript
+          span.tag #Computers
+          span.tag #Typing
+        div.col-xs-6#author
+          span By: Tanner West
+        div.col-xs-6#date
+         span February 04, 2017
+        p#first
+          | I'm going to attempt to teach you JavaScript the way I wish I could have learned it. I'm going to call this the "code first, ask questions later approach." I hope to teach you how to do a few fun, interesting things early Hopefully this guide will help spark an interest in you that will motivate you to seek the "how" later down the road.
+        p
+          | The first thing I want you to do is press <kbd>ctrl + shift + i</kbd> on your keyboard. This action will open up your browser's developer tools. If it isn't already selected, click on the "Console" tab in that pane that opened up. This is your Browser's JavaScript console. Here you have access to your browser's JavaScript engine an all the elements on the page. You're probably eager to type something, so type in <kbd>document.getElementById("my-favorite")</kbd> and hit the "Enter" key.
+
+        h2#my-favorite Here Begins Your JavaScript Journey
+        p
+          | What you've just done is ask the browser to <i>return</i> the element or elements on the page that have an id of "my-favorite," which is obviously the heading just before this paragraph. I gave it that id when I posted this article, but it could have been anything I wanted it to be.
+        p
+          | Now try this. In the console, press the arrow up key on the keyboard to bring up the last thing you typed. Go to the end of that line and append it to say the following <kbd>document.getElementById("#my-favorite").innerHTML = "Learning JavaScript is So Much Fun"</kbd>.
+        p
+          | Look at what happened. You've just told the browser to change the content on the page. This change only affects the copy of the page that's being displayed in the browser right now. Any changes will be lost if you reload or navigate away from the page.
+        p
+          | You may be wanting to experiment with your newfound power. Try playing with what you just learned by selecting the elements "second-favorite" and "first".
+        h2 The Object of Affection  
+        p
+          | JavaScript is an object-oriented programming language. That means that much of the data you'll interact with comes in the form of an <i>object</i>. An object is simply a type of data that can include collection of more data in the form properties and abilities. You're interacting with an object in the above example when you type document. <a href="https://css-tricks.com/dom/" title="CSS Tricks: The DOM">Document is a JavaScript object</a> that represents the page you're currently viewing the browser.
+        p 
+          | The second piece of the line of code you used above, the ".getElementById()" part, is a <i>method</i> of the Document object that allows developers to return and change elements of the page by selecting them their unique ID's (you'll learn more about ID's in subsequent posts). Often, as is the case here, methods can take <i>arguments</i>. In this example, the argument is the ID of the HTML element you want the browser to return.
+
+        p
+          | This might be a good opportunity to learn about another of the language's fundamental data types, strings.
+        h2 Lesson Summary
+        p
+          | That's all I want to cover today. We've gone over quite a bit! You learned how to use your browsers JavaScript console to return HTML elements based on their IDs. In the process, you learned what people mean when they say that JavaScript is an object-oriented programming language.
+        p
+          | I also introduced you to the concept of methods, which are properties of objects that can be said to "do" something.
+        p 
+          | In the next post, I'll introduce you to more data types like strings, numbers, and arrays. See you then!
+
+
+
+      div.col-md-2
+script.
+  window.addEventListener('scroll', function(){
+  console.log(window.scrollY); 
+  if (window.innerWidth > 991){
+    if (window.scrollY > 200){
+      document.getElementById("nav-row").classList.add("scrolled");
+    } else {
+    document.getElementById("nav-row").classList.remove("scrolled");
+
+    }} else {
+
+  if (window.scrollY > 100){
+    document.getElementById("nav-row").classList.add("scrolled");
+    } else {
+    document.getElementById("nav-row").classList.remove("scrolled");
+
+    }}}
+    )

@@ -1,0 +1,83 @@
+doctype html
+html
+  head
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js', integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=', crossorigin='anonymous')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+
+    link(href='https://fonts.googleapis.com/css?family=Cormorant|Open+Sans|Shrikhand', rel='stylesheet')
+
+
+style
+  include bootstrap.css
+  include style.css
+-var authenticated = [{"title": "Should you wear shoes in 2017?", "author": "Shoeless Hipster", "tag": "WTF", "img": "shoes.jpg", "content":"You've likely been wearing shoes for most of your life and never questioned whether you should continue to do so. Now, one hipster with cold feed is challenging the way we think about footwear."}, {"title": "How to choose the right fashion accessories for your dog", "author": "Hipster Fashionista", "tag": "WOOF WOOF", "img": "dog.jpg", "content":"If you think doggie accessories are limited to stupid little sweaters and ugly tutus, think again. Here we offer tips for making sure your dog dresses as cool as you do."}, {"title": "Choosing a couch that you won't be ashamed to let your friends sleep on", "author": "Hipster Fashionista", "tag": "KICKIN IT",  "img": "couch.jpg", "content":"Do the words \'Hey, bro, can I crash at your place tonight\' cause you to break out into a cold sweat because you're embarrassed over your crappy old couch? Learn how to avoid sofa shame with this guide to buying a couch that your friends will be happy to sleep on."}, {"title": "Tennessee hipsters eat more lard than other southern hipsters", "author": "Hipster Fashionista", "tag": "TN!", "img":"bread.jpg"}, {"title": "College hipsters reject label \'cool\', prefer the term \'keen\'", "author": "4th Year Hipster", "tag": "HIGHER ED", "img": "study.jpg", "content":"A seven-year study conducted by Vanderbilt University reveals that college hipsters prefer to refer to themselves as \'keen\' rather than \'cool\'when describing their sense of fashion, social justice, and sense of community."} ]
+mixin articles(articles)
+ each article in articles
+  div.row.guideContainer
+     div.col-md-12.subtitleDiv
+      span.subtitle= article.tag
+     div.col-md-12
+      h2= article.title
+     div.col-md-12
+      div.col-md-4
+        img(src=article.img).img-responsive.guideImg
+      div.col-md-8
+        p.guideSnippet= article.content
+body
+ div.container
+  div.row
+    div#topNavDiv.col-md-12
+      div.row
+        div.col-md-4
+          ul#navLinks
+            li Fashion
+            li News
+            li Events
+        div.col-md-4
+          h1#title.text-center Hipset
+
+        div.col-md-4
+          ul#search         
+            li search
+
+  div.row#main
+
+    div#feature.col-md-12
+     div#featureTitleContainer 
+      span.subtitle OH BOY
+      br
+      span#featureText hipster fashion week brings hipsters out in droves
+      br
+      span#byline By: Hipster Fashionista
+      br
+      span#date 1.28.17
+
+    div.col-md-2
+  div.row#features
+    div.col-md-4#article
+      div#articleContent1
+       div#articleTitleContainer 
+        span#articleText wearing hats
+    div.col-md-4#article
+      div#articleContent2
+       div#articleTitleContainer 
+        span#articleText being moody
+    div.col-md-4#article
+      div#articleContent3
+       div#articleTitleContainer 
+        span#articleText much cooler
+  div#articles 
+    +articles(authenticated)  
+    div.row#footerNavContainer            
+      div.col-md-4
+        ul#footerNav
+          li Contact
+          li Corporate
+          li Advertise
+script(src='edits.js')
+
+
+
+
+
