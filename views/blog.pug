@@ -1,27 +1,6 @@
-doctype html
-head
-  link(href='https://fonts.googleapis.com/css?family=Knewave|Lora|Open+Sans' rel='stylesheet')
-  meta(name="viewport" content="width=device-width, initial-scale=1")
-
-  style
-    include bootstrap.css
-    include site-style.css
-
+include doc-head.pug
 body
-  div.row#nav-row.navbar-fixed-top
-      div#affixed
-        div.col-md-2
-        div.col-md-8
-          div.row#logo-nav-row
-            div.col-md-6.col-xs-12
-              a(href='tannerwest.net' title='tanner west . net')
-               h1#logo TANNER WEST . NET
-            div.col-md-6.col-xs-12
-              ul#nav
-                li#active Blog
-                li Projects
-                li Contact
-        div.col-md-2
+  include header.pug
   div.container
 
     div.row
