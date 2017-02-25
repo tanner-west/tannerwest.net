@@ -1,7 +1,4 @@
 var express = require('express');
-var fs = require('fs');
-var md =require('markdown-it')('commonmark');
-
 var app = express();
 app.use(express.static('public'));
 
@@ -16,14 +13,12 @@ app.get('/', function (req, res){
 app.get('/projects', function (req, res){
 	res.render('projects');
 });
-app.get('/blogpiece', function (req, res){
-	res.render('blogpiece');
+app.get('/blog', function (req, res){
+	res.render('blog');
 });
 
 
-
-
-app.listen(3000, function () {
-  console.log('hipblog is happening now!');
+app.listen(8080, function () {
+  console.log('tannerwest.net is being served');
 });
 
