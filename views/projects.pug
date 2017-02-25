@@ -2,14 +2,14 @@ doctype html
 include doc-head.pug
   link(href='css/projects-style.css' rel='stylesheet')
     
-  -var projectList = [{"title": "Hipset", "desc": "A blog showcasing my unique talent", "img": "images/hipset.jpg", "url": "https://google.com", "repo": "https://github.com/tanner-west/hipster-blog"}, {"title": "Moo Cow Lounge", "desc": "A website for making money", "img": "images/moo-cow.jpg", "url": "https://google.com"}, {"title": "Fake App", "desc": "One person's dream app", "url": "https://google.com"}, {"desc": "A website for making money", "img": "images/moo-cow.jpg", "url": "https://google.com"}, {"desc": "A blog showcasing my unique talent", "img": "images/hipset.jpg", "url": "https://google.com", "repo": "https://github.com/tanner-west/hipster-blog"}, {"desc": "One person's dream app", "url": "https://google.com"} ] 
-
+  -var projectList = [{"title": "Hipset", "desc": "A mock hipster fashion blog.", "img": "images/hipset.png", "url": "https://tannerwest.net/projects/hip-blog", "repo": "https://github.com/tanner-west/hipster-blog"}, {"title": "Moo Cow Lounge", "desc": "A website for a mock coffee shop.", "img": "images/moo-cow.png", "url": "https://tannerwest.net/projects/moo-cow-lounge", "repo": "https://github.com/tanner-west/moo-cow-lounge"}, {"title": "Broth and Butter", "desc": "A website for a mock specialty foods store.", "img": "images/broth-and-butter.png", "url": "https://tannerwest.net/projects/broth-and-butter", "repo": "https://github.com/tanner-west/broth-and-butter"}, {"title": "Tennessee Barbecue", "desc": "A tool for finding barbecue joints in Tennessee.", "img": "images/moo-cow.png", "url": "https://google.com"}, {"title": "Element Editor", "desc":"An online tool for editing HTML one element at a time. I created this to cure the headache of digging through complex pieces of content made with Bootstrap markup.", "img": "images/hipset.png", "url": "http://appalcorps.com/editor"}, {"desc": "One person's dream app", "url": "https://google.com"}]
   mixin projects(projects)
    each project in projects
     div.col-md-4
       div.flip-container.flip-container-desktop
         div.flipper
           div.front(style="background-image: url(" + project.img + ");")
+            span.project-label= project.title
           div.back
             div#inlay
               h2= project.title
