@@ -29,6 +29,10 @@ app.get('/blog', function (req, res){
 	res.render('blog');
 });
 
+app.get('/contact', function (req, res){
+	res.render('contact');
+});
+
 app.get('/projects/hip-blog', function (req, res){
 	res.render('hipset');
 });
