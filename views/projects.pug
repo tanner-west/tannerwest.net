@@ -12,7 +12,8 @@ include doc-head.pug
             span.project-label= project.title
           div.back
             div#inlay
-              h2= project.title
+              a(href= project.url)
+                h2= project.title
               p= project.desc
               a(href= project.url)
                 div#visit
@@ -32,6 +33,9 @@ body
       +projects(projectList)
 script(src='js/headerscroller.js')
 script(src='js/project-flipper.js')
+script.
+ document.querySelector(".front").style.backgroundPosition = "top left";
+ document.querySelector("#projects-link").classList.add('active');
 
 
   
