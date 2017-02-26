@@ -1,6 +1,5 @@
 
 h1 {
-	font-weight: bold;
 	color: white;
 	margin: 0;
 
@@ -36,32 +35,30 @@ h1 {
      box-shadow:         0px 1px 3px 1px #ccc;
 }
 
-
-
-#visit {
+#visit, #github {
 	position: absolute;
 	width: 60px;
 	height: 60px;
-	background-color: white;
 	bottom: 15px;
-	right: 15px;
+	background-color: white;
 	border-radius: 60px;
 	box-shadow: 0px 0px 10px 5px #720292;
+	transition: all .25s;
+
+
+}
+
+
+#visit {
+	right: 15px;
+	
 }
 
 #github {
 	background-image: url('../images/github.png');
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 60px;
-
-	position: absolute;
-	width: 60px;
-	height: 60px;
-	background-color: white;
-	bottom: 15px;
 	right: 95px;
-	box-shadow: 0px 0px 10px 5px #720292;
 }
 
 #github:hover, #visit:hover {
@@ -69,6 +66,15 @@ h1 {
 
 
 }
+.go {
+	font-size: 25px;
+	display: inline-block;
+	color: black;
+	font-weight: bold;
+	margin: 12.5px 0 12.5px 0;
+}
+
+
 .flip-container-mobile {
 
 }

@@ -18,7 +18,7 @@ app.set('views', ['./views', '../hipster-blog/views', '../broth-and-butter/views
 app.set('view engine', 'pug');
 
 app.get('/', function (req, res){
-	res.render('index');
+	res.redirect(302, '/projects');
 });
 
 
