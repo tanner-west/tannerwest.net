@@ -37,9 +37,11 @@ span {
 
 #nav-row * {
 	overflow: visible;
-	transition: all .5s;
+	transition: all .25s;
 
 }
+
+
 .tag {
 	border-radius: 3px;
 	background-color: #BB0052;
@@ -97,6 +99,8 @@ li:hover {
 	border-bottom: 5px solid #75CA00 !important;
 
 }
+
+
 #logo-nav-row {
 	margin: -9px;
 }
@@ -105,9 +109,7 @@ li:hover {
 	border-bottom: 5px solid #720292 !important;
 }
 
-.nav {
-	height: 70px;
-}
+
 
 #nav-row {
 	height: 70px;
@@ -115,6 +117,8 @@ li:hover {
 	padding-bottom: 20px;
 	margin: 0;
 	background-color: white;
+	transition: height 1s;
+
 
 }
 
