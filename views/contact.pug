@@ -1,10 +1,24 @@
 include doc-head.pug
 body
+  style.
+    #email {height: 50px; font-size: 32px; display: block; width: 50%; margin: auto; text-align: center;}
+    .btn {margin: auto; display: block; margin: 10px auto; text-align: center; background-color: #720292}
+    .btn > span {margin: 0; color: white;}
+
   include header.pug
   div.container
     div.row
       h1.text-center Contact Me
-      h2.text-center west.tanner.j@gmail.com
-  script document.querySelector("#contact-link").classList.add('active');
+      // Target
+      input#email(value='west.tanner.j@gmail.com')
+      // Trigger
+      button.btn(data-clipboard-target='#email')
+        span copy to clipboard
+
+
   script(src='nav-button.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js')  
+  script.
+   document.querySelector('#contact-link').classList.add('active');
+   new Clipboard('.btn');
 
