@@ -162,8 +162,17 @@ li:hover {
 	visibility: visible;
 }
 
+#email {
+	height: 50px; font-size: 32px; display: block; width: 50%; margin: auto; text-align: center;}
+.btn {
+	margin: auto; display: block; margin: 10px auto; text-align: center; background-color: #720292}
+.btn > span {
+	margin: 0; color: white;}
 
 @media (max-width: 991px) {
+	#email {
+		width: 90%;
+	}
 	#nav-row {
 		height: 70px;
 	}
