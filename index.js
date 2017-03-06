@@ -9,12 +9,14 @@ app.use('/projects', express.static(path.join(__dirname + '/public')));
 app.use('/projects', express.static(path.join(__dirname + '/../hipster-blog/public')));
 app.use('/projects', express.static(path.join(__dirname + '/../broth-and-butter/public')));
 app.use('/projects', express.static(path.join(__dirname + '/../moo-cow-lounge/public')));
+app.use('/projects', express.static(path.join(__dirname + '/../tnbbq/public')));
 
 
 
 
 
-app.set('views', ['./views', '../hipster-blog/views', '../broth-and-butter/views', '../moo-cow-lounge/views']);
+
+app.set('views', ['./views', '../hipster-blog/views', '../broth-and-butter/views', '../moo-cow-lounge/views', '../tnbbq/views']);
 app.set('view engine', 'pug');
 
 app.get('/', function (req, res){
@@ -43,6 +45,10 @@ app.get('/projects/broth-and-butter', function (req, res){
 
 app.get('/projects/moo-cow-lounge', function (req, res){
 	res.render('moo-cow-lounge');
+});
+
+app.get('/projects/tnbbq', function (req, res){
+	res.render('map');
 });
 
 app.get('/dir', function (req, res){

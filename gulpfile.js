@@ -1,13 +1,13 @@
 var gulp       = require('gulp');  
-var less       = require('gulp-less');  
+var sass       = require('gulp-sass');  
 var watch      = require('gulp-watch');
 
-gulp.task('less', function() {  
-  return gulp.src('node_modules/bootstrap/less/bootstrap.less')
-    .pipe(less())
-    .pipe(gulp.dest('views'));
+gulp.task('sass', function() {  
+  return gulp.src('./sass-src/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./public/css'));
 });
 
-gulp.task('watch', function(){
-	gulp.watch('node_modules/bootstrap/less/*.less', ['less'])
+gulp.task('sass:watch', function(){
+	gulp.watch('./sass-src/*.scss', ['sass'])
 });
