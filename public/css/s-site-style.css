@@ -1,0 +1,173 @@
+a {
+  color: black; }
+
+a:hover {
+  color: black;
+  text-decoration: none; }
+
+mark {
+  padding: 0;
+  background-color: #ff0; }
+
+body {
+  font-family: 'Open Sans', sans-serif; }
+  body * {
+    box-sizing: border-box; }
+
+h1, h2, h3, span, li {
+  font-family: 'Open Sans', sans-serif; }
+
+p {
+  font-family: 'Lora', serif; }
+
+span {
+  margin-left: -15px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.25em; }
+
+.tag {
+  border-radius: 3px;
+  background-color: #BB0052;
+  font-family: lucida, courier;
+  padding: 5px;
+  color: white;
+  margin: 5px; }
+
+#logo {
+  margin: 10px;
+  padding: 10px;
+  font-family: 'Knewave', cursive;
+  position: absolute;
+  top: -10px;
+  transform: rotate(-5deg);
+  background: -webkit-linear-gradient(left, #720292, #BB0052, #75CA00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+#first {
+  margin-top: 20px; }
+
+#title {
+  margin-bottom: 20px; }
+
+#nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+  #nav li {
+    display: inline-block;
+    vertical-align: middle;
+    width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: 5px solid white; }
+
+li:hover {
+  border-bottom: 5px solid #75CA00 !important; }
+
+#logo-nav-row {
+  margin: -9px; }
+
+.active {
+  border-bottom: 5px solid #720292 !important; }
+
+#nav-row {
+  height: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0;
+  background-color: white;
+  transition: height 1s; }
+  #nav-row * {
+    overflow: visible;
+    transition: all .25s; }
+
+.container {
+  padding-top: 110px; }
+
+.scrolled {
+  height: 50px !important;
+  -moz-box-shadow: 0px 1px 3px 1px #ccc;
+  -webkit-box-shadow: 0px 1px 3px 1px #ccc;
+  box-shadow: 0px 1px 3px 1px #ccc; }
+  .scrolled h1 {
+    transform: rotate(0deg) !important;
+    font-size: 24px;
+    margin: 0 !important;
+    padding: 0;
+    top: 0; }
+  .scrolled li {
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+    font-size: 1em !important; }
+
+.fa {
+  visibility: hidden;
+  font-size: 40px;
+  position: fixed;
+  top: 5px;
+  right: 10px; }
+
+.invisible {
+  visibility: visible; }
+
+#email {
+  height: 50px;
+  font-size: 32px;
+  display: block;
+  width: 50%;
+  margin: auto;
+  text-align: center; }
+
+.btn {
+  margin: auto;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  background-color: #720292; }
+  .btn span {
+    margin: 0;
+    color: white; }
+
+@media (max-width: 991px) {
+  #email {
+    width: 90%; }
+  #nav-row {
+    height: 70px; }
+  #logo {
+    padding-top: 25px;
+    font-size: 24px;
+    margin: 5px; }
+  .container {
+    padding-top: 60px; }
+  .scrolled * h1 {
+    padding-top: 10px !important;
+    margin-top: 0 !important; }
+  #nav {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    top: 70px;
+    right: 0px;
+    transition: all 0s; }
+  .scrolled * #nav {
+    top: 50px; }
+  #nav > li {
+    display: block; }
+  #nav * {
+    transition: all 0s; }
+  .fa {
+    visibility: visible; }
+  .invisible {
+    visibility: hidden !important; } }
