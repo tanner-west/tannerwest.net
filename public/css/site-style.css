@@ -182,6 +182,12 @@ li:hover {
 	margin: 0; color: white;}
 
 @media (max-width: 991px) {
+	body {
+		font-size: 16px;
+	}
+	h1 {
+		font-size: 28px;
+	}
 	#email {
 		width: 90%;
 	}
@@ -232,5 +238,9 @@ li:hover {
 	}
 	.invisible {
 		visibility: hidden !important;
+	}
+
+	span, .tag {
+		font-size: .9em;
 	}
 }
