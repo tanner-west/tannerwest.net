@@ -20,6 +20,7 @@ mark {
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
 }
 h1, h2, h3, span, li {
 	font-family: 'Open Sans', sans-serif;
@@ -128,6 +129,13 @@ li:hover {
 
 .container {
 	padding-top: 110px;
+	padding-bottom: 110px;
+
+
+}
+
+.container * a {
+	color: #5A22CE;
 }
 
 .scrolled * h1 {
