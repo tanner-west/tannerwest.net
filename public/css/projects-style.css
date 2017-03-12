@@ -38,7 +38,7 @@ body {
      box-shadow:         0px 1px 3px 1px #ccc;
 }
 
-#visit, #github {
+#visit, #github, #why {
 	position: absolute;
 	width: 60px;
 	height: 60px;
@@ -49,6 +49,10 @@ body {
 	transition: all .25s;
 
 
+}
+
+#why {
+	right: 175px;
 }
 
 
@@ -64,7 +68,7 @@ body {
 	right: 95px;
 }
 
-#github:hover, #visit:hover {
+#github:hover, #visit:hover, #why:hover {
 	box-shadow: 0px 0px 10px 5px #75CA00;
 
 
@@ -75,6 +79,14 @@ body {
 	color: black;
 	font-weight: bold;
 	margin: 12.5px 0 12.5px 0;
+}
+
+.why-text {
+	font-size: 20px;
+	display: inline-block;
+	color: black;
+	font-weight: bold;
+	margin: 16px 0 16px 0;
 }
 
 

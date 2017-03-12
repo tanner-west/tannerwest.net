@@ -2,7 +2,7 @@ doctype html
 include doc-head.pug
   link(href='css/projects-style.css' rel='stylesheet')
     
-  -var projectList = [{"title": "Hipset", "desc": "A mock hipster fashion blog.", "img": "images/hipset.png", "url": "https://tannerwest.net/projects/hip-blog", "repo": "https://github.com/tanner-west/hipster-blog"}, {"title": "Moo Cow Lounge", "desc": "A website for a mock coffee shop.", "img": "images/moo-cow.png", "url": "https://tannerwest.net/projects/moo-cow-lounge", "repo": "https://github.com/tanner-west/moo-cow-lounge"}, {"title": "Broth and Butter", "desc": "A website for a mock specialty foods store.", "img": "images/broth-and-butter.png", "url": "https://tannerwest.net/projects/broth-and-butter", "repo": "https://github.com/tanner-west/broth-and-butter"}, {"title": "Tennessee Barbecue", "desc": "A tool for finding barbecue joints in Tennessee.", "img": "images/tnbbq.png", "url": "https://tannerwest.net/projects/tnbbq", "repo":"https://github.com/tanner-west/tennessee-barbecue"}, {"title": "Element Editor", "desc":"An online tool for editing the content of an HTML document one element at a time.", "img": "images/ee.png", "url": "http://appalcorps.com/editor"}, {"title":"PHP Sales Tool", "desc": "I wrote a simple PHP app to help salespeople at a company compare the advantages of their equipment to competitors. Contact me for more info.", "img":"images/php.png"}]
+  -var projectList = [{"title": "Hipset", "desc": "A mock hipster fashion blog.", "img": "images/hipset.png", "url": "https://tannerwest.net/projects/hip-blog", "repo": "https://github.com/tanner-west/hipster-blog", "why": "https://tannerwest.net/blog#why-hipset"}, {"title": "Moo Cow Lounge", "desc": "A website for a mock coffee shop.", "img": "images/moo-cow.png", "url": "https://tannerwest.net/projects/moo-cow-lounge", "repo": "https://github.com/tanner-west/moo-cow-lounge", "why": "https://tannerwest.net/blog#why-mcl"}, {"title": "Broth and Butter", "desc": "A website for a mock specialty foods store.", "img": "images/broth-and-butter.png", "url": "https://tannerwest.net/projects/broth-and-butter", "repo": "https://github.com/tanner-west/broth-and-butter"}, {"title": "Tennessee Barbecue", "desc": "A tool for finding barbecue joints in Tennessee.", "img": "images/tnbbq.png", "url": "https://tannerwest.net/projects/tnbbq", "repo": "https://github.com/tanner-west/tennessee-barbecue", "why": "https://tannerwest.net/blog#why-tnbbq"}, {"title": "Element Editor", "desc": "An online tool for editing the content of an HTML document one element at a time.", "img": "images/ee.png", "url": "http://appalcorps.com/editor", "why": "https://tannerwest.net/blog#why-ee"}, {"title": "PHP Sales Tool", "desc": "I wrote a simple PHP app to help salespeople at a company compare the advantages of their equipment to competitors. Contact me for more info.", "img": "images/php.png"} ]
   mixin projects(projects)
    each project in projects
     div.col-md-4
@@ -22,6 +22,10 @@ include doc-head.pug
               if project.repo    
                 a(href= project.repo)
                   div#github
+              if project.why
+                a(href= project.why)
+                  div#why
+                    span.text-center.why-text WHY?
 body
  include header.pug
  div.container 
@@ -30,6 +34,8 @@ body
     div.col-md-12
        h1.text-center
         span#title-heading Projects
+  div.row
+    p.text-center(style="font-size: 20px; margin-bottom: 20px;") Here's what I've been working on lately. Learn why and <a href="https://tannerwest.net/blog" title="Tanner West's Blog">read my mission statement here</a>.
   div#projects
     div.row
      div.col-md-12

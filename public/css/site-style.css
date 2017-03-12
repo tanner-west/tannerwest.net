@@ -161,9 +161,8 @@ li:hover {
 	font-size: 1em !important;
 }
 
-.fa {
+#hamburger {
 	visibility: hidden;
-	font-size: 40px;
 	position: fixed;
 	top: 5px;
 	right: 10px;
@@ -180,6 +179,14 @@ li:hover {
 	margin: auto; display: block; margin: 10px auto; text-align: center; background-color: #720292}
 .btn > span {
 	margin: 0; color: white;}
+#pin {
+	float: left;
+	transform: translateY(50%);
+}
+
+.entry {
+	padding-top: 40px;
+}
 
 @media (max-width: 991px) {
 	body {
@@ -232,7 +239,7 @@ li:hover {
 		transition: all 0s;
 
 	}
-	.fa {
+	#hamburger {
 		visibility: visible;
 
 	}
@@ -243,4 +250,10 @@ li:hover {
 	span, .tag {
 		font-size: .9em;
 	}
+
+	#pin {
+		max-height: 28px;
+		transform: none;
+	}
+
 }
