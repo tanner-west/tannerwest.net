@@ -10,6 +10,8 @@ app.use('/projects', express.static(path.join(__dirname + '/../hipster-blog/publ
 app.use('/projects', express.static(path.join(__dirname + '/../broth-and-butter/public')));
 app.use('/projects', express.static(path.join(__dirname + '/../moo-cow-lounge/public')));
 app.use('/projects', express.static(path.join(__dirname + '/../tnbbq/public')));
+app.use('/blog', express.static(path.join(__dirname + '/public')));
+
 
 
 
@@ -31,6 +33,10 @@ app.get('/projects', function (req, res){
 });
 app.get('/blog', function (req, res){
 	res.render('blog');
+});
+
+app.get('/blog/codestock-2017-speakers', function (req, res){
+	res.render('codestock-2017-speakers');
 });
 
 app.get('/contact', function (req, res){

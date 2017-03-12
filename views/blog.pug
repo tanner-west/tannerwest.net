@@ -7,9 +7,10 @@ body
     div.row
       div.col-md-2
       div.col-md-8
-        h1#title 
-          img(src='images/pin.svg' style='margin-right: 5px;')
-          | Mission Statement
+        div.col-md-12
+          img#pin(src='images/pin.svg' style='margin-right: 5px;')  
+
+          h1#title Mission Statement
         div.col-md-12
           span.tag #Why?
           span.tag #Hello My Name is Tanner
@@ -17,7 +18,7 @@ body
           span By: Tanner West
         div.col-xs-6#date 
          span &nbsp;
-        p#first Howdy and thanks for stopping by. I'm a web developer in East Tennessee who's just getting his start in the field. My current goal is to take on a junior developer role at a company where I can make valuable contributions from day one. I look forward to joining a team of individuals who I can learn and grow with.
+        p#first Howdy and thanks for stopping by. I'm a web developer in East Tennessee just getting my start in the field. My current goal is to take on my first junior developer role at a company where I can make valuable contributions from day one. I look forward to joining a team of individuals who I can learn and grow with.
         p My <a href="https://tannerwest.net/projects" title="Projects">projects page</a> will give you an idea of my current strengths. Most of my experience so far has been in front-end development. I've spent a lot of time building projects with Bootstrap, Pug, jQuery, and vanilla JavaScript. Most of my development has been done in a Node.js environment using Express. This site you're currently viewing is running as an Express app on a Digital Ocean Ubuntu droplet.
         p I enjoy using tools like Gulp and SASS to make life easier. I really want to learn Webpack but I've yet to figure out how to work it into my workflow. The next technologies I want to become comfortable with are Angular and React. I'd also like to become skilled at developing custom Wordpress themes, since Wordpress is still such a popular platform on the web.
         p If you think I'd make a valuable addition to your team, I'd love to hear from you. I also welcome any feedback you may have regarding my site and my projects. You can reach me at west.tanner.j@gmail.com.
@@ -47,7 +48,7 @@ body
                         
                         each talk in speakerList[i].talks
                             p= talk
-    div.row
+    div.row.entry#why-tnbbq
       div.col-md-2
       div.col-md-8
         h1#title Why Tennessee Barbecue?
@@ -66,7 +67,7 @@ body
         P Laying the groundwork for Tennessee Barbecue meant I had to get comfortable with using the Google Maps api and its custom markers feature. Doing so taught me a lot about JavaScript, especially when it comes to event handlers. I also use jQuery to populate a div with a list of barbecue joints that are currently within the maps bounds and to make the site interactive for users. All data is held in JSON format.
         h3 What's Next for This Project?
         p Currently I only have a couple dozen barbecue joints in my TNBBQ data, but I hope to build it into a comprehensive list of all Barbecue joints in Tennessee. I recently registered the domain "tnbarbecue.com" and I hope to move the site there soon. My ultimate goal is to visit these places, talk to the pitmasters who make babecue their life's work, and tell their stories on the site through essays and photos.
-    div.row
+    div.row.entry#why-ee
       div.col-md-2
       div.col-md-8
         h1#title Why Element Editor?
@@ -88,7 +89,7 @@ body
 
 
 
-    div.row
+    div.row.entry#why-hipset
       div.col-md-2
       div.col-md-8
         h1#title Why Hipset?
@@ -108,7 +109,7 @@ body
         p I learned how to create a horizontal div that scrolls using the CSS :hover event and JavaScript. I use that as the interface for scrolling through the list of "guides" midway through the page.  I also discovered the white-space property, which helped me get the text to display how I wanted it in those guide divs.
         p This project was also one of the first in which I used pug mixins to display content from JSON data. I use mixins to display both the "guide" divs and also the "articles" in the last section.
 
-    div.row
+    div.row.entry#why-mcl
       div.col-md-2
       div.col-md-8
         h1#title Why Moo Cow Lounge?
