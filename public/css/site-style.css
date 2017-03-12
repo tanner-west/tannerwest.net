@@ -162,9 +162,10 @@ li:hover {
 }
 
 #hamburger {
+	height: 35px;
 	visibility: hidden;
 	position: fixed;
-	top: 5px;
+	top: 10px;
 	right: 10px;
 
 }
@@ -188,12 +189,48 @@ li:hover {
 	padding-top: 40px;
 }
 
+.connect {
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	left: 20px;
+	background-color: white;
+	border-radius: 60px;
+	box-shadow: 0px 0px 10px 5px #720292;
+	transition: all .25s;
+}
+
+#git-connect {
+	background-image: url('../images/github.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: 20px;
+}
+
+#linkedin-connect {
+	background-image: url('../images/linkedin.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: 100px;
+
+}
+
+.connect:hover {
+	box-shadow: 0px 0px 10px 5px #75CA00;
+}
+
+
 @media (max-width: 991px) {
+
 	body {
 		font-size: 16px;
 	}
 	h1 {
 		font-size: 28px;
+	}
+
+	.connect {
+		display: none;
 	}
 	#email {
 		width: 90%;

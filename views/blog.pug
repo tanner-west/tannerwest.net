@@ -19,7 +19,7 @@ body
         div.col-xs-6#date 
          span &nbsp;
         p#first Howdy and thanks for stopping by. I'm a web developer in East Tennessee just getting my start in the field. My current goal is to take on my first junior developer role at a company where I can make valuable contributions from day one. I look forward to joining a team of individuals who I can learn and grow with.
-        p My <a href="https://tannerwest.net/projects" title="Projects">projects page</a> will give you an idea of my current strengths. Most of my experience so far has been in front-end development. I've spent a lot of time building projects with Bootstrap, Pug, jQuery, and vanilla JavaScript. Most of my development has been done in a Node.js environment using Express. This site you're currently viewing is running as an Express app on a Digital Ocean Ubuntu droplet.
+        p My <a href="https://tannerwest.net/projects" title="Projects">projects page</a> will give you an idea of my current strengths. Most of my experience so far has been in front-end development. I've spent a lot of time building projects with Bootstrap, Pug, jQuery, and vanilla JavaScript. Most of my development has been done on Linux in a Node.js environment using Express. This site you're currently viewing is running as an Express app on a Digital Ocean Ubuntu droplet.
         p I enjoy using tools like Gulp and SASS to make life easier. I really want to learn Webpack but I've yet to figure out how to work it into my workflow. The next technologies I want to become comfortable with are Angular and React. I'd also like to become skilled at developing custom Wordpress themes, since Wordpress is still such a popular platform on the web.
         p If you think I'd make a valuable addition to your team, I'd love to hear from you. I also welcome any feedback you may have regarding my site and my projects. You can reach me at west.tanner.j@gmail.com.
 
@@ -60,7 +60,7 @@ body
         div.col-xs-6#date
          span March 1, 2017
         p#first
-          | This is the fourth entry in my "Why?" series in which I explain why I chose to undertake each of my side projects and highlight the problems I aimed to solve and lessons I learned from each.
+          | This is the fourth entry in my "Why?" series in which I explain why I chose to undertake each of my side projects. These entries highlight the problems I aimed to solve and the lessons I learned from each project.
         h3 The Problem
         p Most of my side projects are pages for "mock" businesses that don't actually exist, but Tennessee Barbecue is a little different. I plan on turning it into a full-fledged website that people can actually use.
         p The inspiration for TNBBQ came shortly after I discovered <a href="http://www.truecue.org/" title="True Cue">True Cue</a>, a website dedicated to listing "authentic" barbecue joints that cook their pork using wood or wood coals and serve it with a "regionally-appropriate" sauce or dip. I love the site, but I was disappointed to find that they only list joints in Kentucky and the Carolinas. I searched for a site that lists Tennessee barbecue restaurants, only to find that there isn't one. I decided to build one myself.
@@ -79,13 +79,13 @@ body
         div.col-xs-6#date
          span March 1, 2017
         p#first
-          | This is the third entry in my "Why?" series in which I explain why I chose to undertake each of my side projects and highlight the problems I aimed to solve and lessons I learned from each.
+          | This is the third entry in my "Why?" series in which I explain why I chose to undertake each of my side projects. These entries highlight the problems I aimed to solve and the lessons I learned from each project.
         h3 The Problem
-        p At my current job, I pioneered the use of the Bootstrap grid system to format buyers' guides to be more visually interesting and easy to navigate for the reader. After formatting a few articles this way, I began to understand how it could quickly become a tedious task to edit web content that was nested in a jungle of .rows and .col-md-whatevers. I found that I needed a way to edit the content of a page one element at a time, simple by clicking on it, without having to be distracted by the actual markup of the content.
+        p At my current job, I pioneered the use of the Bootstrap grid system to make our buyers' guides more visually interesting and easier for the reader to navigate. After formatting a few articles this way, I began to understand how it could quickly become a tedious task to edit web content that was nested in a jungle of .rows and .col-md-whatevers. I found that I needed a way to edit the content of a page one element at a time, simple by clicking on it, without having to be distracted by markup behind it.
         h3 The Challenges
-        p Element Editor is a web page that takes a chunk of HTML content and assigns a click listener to each element. When that listener is fired, the element is transformed into a textarea input element in which the user can edit the innerHTML content of the original element. The tag type of the original element is preserved as a "data-" HTML attribute. When the user clicks out of the textarea, it is transformed back into its original element type with the new innerHTML.
+        p Element Editor is a web page that takes a chunk of HTML and assigns a click listener to each element. When that listener is fired, the element is transformed into a textarea input  in which the user can edit the innerHTML content of the original element. The tag type of the original element is preserved as a "data-" HTML attribute. When the user clicks out of the textarea, it is transformed back into its original element type with the new innerHTML.
         h3 What's Next for This Project?
-        p To use this tool currently, the user must write their HTML by hand and paste it into page to edit it. To make it even easier on content writers, I'd like to expand this project into a tool that gives the user "templates" with fields that they simply type their content into and click a button to generate the HTML wrappers.
+        p To use this tool currently, the user must write their HTML by hand and paste it into page to edit it. To make it even easier on content writers, I'd like to expand this project into a tool that gives the user "templates" with fields that they simply type their content into and click a button to wrap it in the appropriate HTML.
 
 
 
@@ -101,13 +101,13 @@ body
         div.col-xs-6#date
          span February 20, 2017
         p#first
-          | This is the second entry in my "Why?" series in which I explain why I chose to undertake each of my side projects and highlight the problems I aimed to solve and lessons I learned from each.
+          | This is the second entry in my "Why?" series in which I explain why I chose to undertake each of my side projects. These entries highlight the problems I aimed to solve and the lessons I learned from each project.
         h3 The Problem
         p Hipset is a mock hipster fashion blog that I created to experiment with the type of layouts and design you see on media sites like <a href="http://vox.com" title="Vox Media">Vox</a> and <a href="http://qz.com" title="Quartz">Quartz</a>. I like how article links on those sites are presented as big images with the headline positioned to one edge of the div. I also like how each headline's background color changes when you hover over it.
         h3 Challenges
-        p Like Moo Cow Lounge, this project taught me the value of using absolute positioning in CSS. It also helped me understand all the different values that background and background-image can take.
-        p I learned how to create a horizontal div that scrolls using the CSS :hover event and JavaScript. I use that as the interface for scrolling through the list of "guides" midway through the page.  I also discovered the white-space property, which helped me get the text to display how I wanted it in those guide divs.
-        p This project was also one of the first in which I used pug mixins to display content from JSON data. I use mixins to display both the "guide" divs and also the "articles" in the last section.
+        p Like Moo Cow Lounge, this project taught me the value of using absolute positioning in CSS. It also helped me understand all the different values that <kbd>background</kbd> and <kbd>background-image</kbd> can take.
+        p I learned how to create a horizontal div that scrolls using the CSS <kbd>:hover</kbd> event and JavaScript, an effect I use as the interface for scrolling through the list of "guides" midway through the page.  I also discovered the <kbd>white-space</kbd> CSS property, which helped me get the text to display how I wanted it in those guide divs.
+        p This project was also one of the first in which I used pug mixins to display content from JSON data. I use mixins to display both the "guide" divs and the "articles" in the last section.
 
     div.row.entry#why-mcl
       div.col-md-2
@@ -121,7 +121,7 @@ body
         div.col-xs-6#date
          span February 12, 2017
         p#first
-          | This is the first entry in my "Why?" series in which I'll explain why I chose to undertake each of my side projects and highlight the problems I aimed to solve and lessons I learned from each.
+          | This is the first entry in my "Why?" series in which I explain why I chose to undertake each of my side projects. These entries highlight the problems I aimed to solve and the lessons I learned from each project.
         h3 The Problem
         p I made Moo Cow Lounge to practice building websites for businesses like restaurants, caf&eacute;s, and boutiques. The format I chose seems to be popular: you have a series of 100% vh divs, each populated with a piece of information about the business. This simple format is all that many businesses need to convey all the essential information to their customers.
         h3 Challenges
