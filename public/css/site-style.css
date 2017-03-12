@@ -219,6 +219,39 @@ li:hover {
 	box-shadow: 0px 0px 10px 5px #75CA00;
 }
 
+.contact-connect {
+	display: inline-block;
+	margin: 30px 20px 20px 20px;
+	width: 60px;
+	height: 60px;
+	background-color: white;
+	border-radius: 60px;
+	box-shadow: 0px 0px 10px 5px #720292;
+	transition: all .25s;
+	transform: translateX(50%);
+}
+
+#contact-git-connect {
+	background-image: url('../images/github.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#contact-linkedin-connect {
+	background-image: url('../images/linkedin.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+
+.contact-connect:hover {
+	box-shadow: 0px 0px 10px 5px #75CA00;
+}
+.inner-contact-wrapper {
+	float: right;
+	width: 50%;
+}
+
 
 @media (max-width: 991px) {
 

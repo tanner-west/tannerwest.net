@@ -1,12 +1,20 @@
 include doc-head.pug
+ style.
+  @media (min-width: 991px){.contact-connect{display:none;}}
 body
   include header.pug
   div.container
     div.row
       h1.text-center Contact Me
       input#email(onClick="" value="west.tanner.j@gmail.com")
-      // Trigger
+    div#contact-wrapper
+      div.inner-contact-wrapper
+        a(href="https://github.com/tanner-west" title="Tanner West on GitHub")
+          div.contact-connect#contact-git-connect
+      div.inner-contact-wrapper
 
+        a(href="https://www.linkedin.com/in/tanner-west/" title="Tanner West on LinkedIn")
+          div.contact-connect#contact-linkedin-connect
 
 
   script(src='nav-button.js')
