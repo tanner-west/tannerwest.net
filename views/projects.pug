@@ -3,28 +3,28 @@ include doc-head.pug
   link(href='css/projects-style.css' rel='stylesheet')
   style.
     .connect {display: none;}  
-  -var projectList = [{"title": "Equipco", "desc": "My attempt to build a product finder page with Angular and the WordPress REST API.", "img": "images/equipco.png", "url": "http://appalcorps.com/equipco"}, {"title": "Element Editor", "desc": "An online tool that aims to make it easier to edit complex HTML content.", "img": "images/ee.png", "url": "http://appalcorps.com/editor-demo", "why": "https://tannerwest.net/blog#why-ee"},{"title": "Hipset", "desc": "A mock hipster fashion blog.", "img": "images/hipset.png", "url": "https://tannerwest.net/projects/hip-blog", "repo": "https://github.com/tanner-west/hipster-blog", "why": "https://tannerwest.net/blog#why-hipset"}, {"title": "Moo Cow Lounge", "desc": "A website for a mock coffee shop.", "img": "images/moo-cow.png", "url": "https://tannerwest.net/projects/moo-cow-lounge", "repo": "https://github.com/tanner-west/moo-cow-lounge", "why": "https://tannerwest.net/blog#why-mcl"}, {"title": "Broth and Butter", "desc": "A website for a mock specialty foods store.", "img": "images/broth-and-butter.png", "url": "https://tannerwest.net/projects/broth-and-butter", "repo": "https://github.com/tanner-west/broth-and-butter"}, {"title": "Tennessee Barbecue", "desc": "A tool for finding barbecue joints in Tennessee.", "img": "images/tnbbq.png", "url": "https://tannerwest.net/projects/tnbbq", "repo": "https://github.com/tanner-west/tennessee-barbecue", "why": "https://tannerwest.net/blog#why-tnbbq"}, {"title": "PHP Sales Tool", "desc": "I wrote a simple PHP app to help salespeople at a company compare the advantages of their equipment to competitors. Contact me for more info.", "img": "images/php.png"} ]
+  //-var projectList = [{"title": "Equipco", "desc": "My attempt to build a product finder page with Angular and the WordPress REST API.", "img": "images/equipco.png", "url": "http://appalcorps.com/equipco"}, {"title": "Element Editor", "desc": "An online tool that aims to make it easier to edit complex HTML content.", "img": "images/ee.png", "url": "http://appalcorps.com/editor-demo", "why": "https://tannerwest.net/blog#why-ee"},{"title": "Hipset", "desc": "A mock hipster fashion blog.", "img": "images/hipset.png", "url": "https://tannerwest.net/projects/hip-blog", "repo": "https://github.com/tanner-west/hipster-blog", "why": "https://tannerwest.net/blog#why-hipset"}, {"title": "Moo Cow Lounge", "desc": "A website for a mock coffee shop.", "img": "images/moo-cow.png", "url": "https://tannerwest.net/projects/moo-cow-lounge", "repo": "https://github.com/tanner-west/moo-cow-lounge", "why": "https://tannerwest.net/blog#why-mcl"}, {"title": "Broth and Butter", "desc": "A website for a mock specialty foods store.", "img": "images/broth-and-butter.png", "url": "https://tannerwest.net/projects/broth-and-butter", "repo": "https://github.com/tanner-west/broth-and-butter"}, {"title": "Tennessee Barbecue", "desc": "A tool for finding barbecue joints in Tennessee.", "img": "images/tnbbq.png", "url": "https://tannerwest.net/projects/tnbbq", "repo": "https://github.com/tanner-west/tennessee-barbecue", "why": "https://tannerwest.net/blog#why-tnbbq"}, {"title": "PHP Sales Tool", "desc": "I wrote a simple PHP app to help salespeople at a company compare the advantages of their equipment to competitors. Contact me for more info.", "img": "images/php.png"} ]
   mixin projects(projects)
    each project in projects
     div.col-md-4
       div.flip-container.flip-container-desktop
         div.flipper
-          div.front(style="background-image: url(" + project.img + ");")
-            span.project-label= project.title
+          div.front(style="background-image: url(" + project.acf.image + ");")
+            span.project-label= project.title.rendered
           div.back
             div#inlay
               a(href= project.url)
-                h2= project.title
-              p= project.desc
-              if project.url
-                a(href= project.url)
+                h2= project.title.rendered
+              p!= project.content.rendered
+              if project.acf.url
+                a(href= project.acf.url)
                   div#visit
                     span.text-center.go GO!
-              if project.repo    
-                a(href= project.repo)
+              if project.acf.repo    
+                a(href= project.acf.repo)
                   div#github
-              if project.why
-                a(href= project.why)
+              if project.acf.why
+                a(href= project.acf.why)
                   div#why
                     span.text-center.why-text WHY?
 body
@@ -33,6 +33,7 @@ body
   
   div.row#top-row
     div.col-md-12
+
        h1.text-center
         span#title-heading Projects
   div.row
@@ -40,7 +41,7 @@ body
   div#projects
     div.row
      div.col-md-12
-      +projects(projectList)
+      +projects(wpContent)
 script(src='js/headerscroller.js')
 script(src='js/project-flipper.js')
 script.

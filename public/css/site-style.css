@@ -56,6 +56,16 @@ span {
 	margin: 5px;
 }
 
+.tag-4::before{
+	content: '#JavaScript';
+}
+.tag-2::before{
+	content: '#Side Projects';
+}
+.tag-3::before{
+	content: '#Why?';
+}
+
 #logo {
 margin: 10px;
 padding: 10px;

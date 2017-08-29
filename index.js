@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var path = require('path');
+var http = require('http');
 
 
 app.use(express.static(path.join(__dirname + '/public')));
@@ -29,10 +30,61 @@ app.get('/', function (req, res){
 
 
 app.get('/projects', function (req, res){
-	res.render('projects');
-});
+const options = {
+	  hostname: 'appalcorps.com',
+	  port: 80,
+	  path: '/twnet/wp-json/wp/v2/projects',
+	  method: 'GET',
+	  };
+	let wpContent = "";  
+	const wpReq = http.request(options, (wpRes) => {
+	  console.log(`STATUS: ${wpRes.statusCode}`);
+	  console.log(`HEADERS: ${JSON.stringify(wpRes.headers)}`);
+	  wpRes.setEncoding('utf8');
+	  wpRes.on('data', (chunk) => {
+	    wpContent += chunk;
+	  });
+	  wpRes.on('end', () => {
+	    console.log('No more data in response.');
+	    console.log(`wp content is ${wpContent}`);
+	    wpContent = JSON.parse(wpContent);
+	    res.render('projects', {wpContent: wpContent});
+
+	  });
+	});
+
+	wpReq.on('error', (e) => {
+	  console.error(`problem with request: ${e.message}`);
+	});
+
+	wpReq.end();});
 app.get('/blog', function (req, res){
-	res.render('blog');
+	const options = {
+	  hostname: 'appalcorps.com',
+	  port: 80,
+	  path: '/twnet/wp-json/wp/v2/posts',
+	  method: 'GET',
+	  };
+	let wpContent = "";  
+	const wpReq = http.request(options, (wpRes) => {
+	  console.log(`STATUS: ${wpRes.statusCode}`);
+	  console.log(`HEADERS: ${JSON.stringify(wpRes.headers)}`);
+	  wpRes.setEncoding('utf8');
+	  wpRes.on('data', (chunk) => {
+	    wpContent += chunk;
+	  });
+	  wpRes.on('end', () => {
+	    wpContent = JSON.parse(wpContent);
+	    res.render('blog', {wpContent: wpContent});
+
+	  });
+	});
+
+	wpReq.on('error', (e) => {
+	  console.error(`problem with request: ${e.message}`);
+	});
+
+	wpReq.end();
 });
 
 app.get('/blog/codestock-2017-speakers', function (req, res){

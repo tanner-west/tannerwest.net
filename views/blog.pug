@@ -1,154 +1,28 @@
 
     
 include doc-head.pug
+  mixin article(articles)
+   each article in articles
+    -var pubDate = new Date(article.date)
+    -var pubDate = pubDate.getMonth() + 1 + "/" + pubDate.getDate() + "/" + pubDate.getFullYear()
+    div.row.entry(id=article.acf.a_id)
+      div.col-md-2
+      div.col-md-8
+        h2#title= article.title.rendered
+        div.col-md-12
+          each tag in article.tags
+            span.tag(class="tag-" + tag)
+        div.col-xs-6#author
+          span By: Tanner West
+        div.col-xs-6#date
+         span= pubDate
+        p!= article.content.rendered
 body
   include header.pug
   div.container
-    div.row
-      div.col-md-2
-      div.col-md-8
-        div.col-md-12
-          img#pin(src='images/pin.svg' style='margin-right: 5px;')  
+    +article(wpContent)
 
-          h1#title Mission Statement
-        div.col-md-12
-          span.tag #Why?
-          span.tag #Hello My Name is Tanner
-        div.col-xs-6#author
-          span By: Tanner West
-        div.col-xs-6#date 
-         span &nbsp;
-        p#first Howdy and thanks for stopping by. I'm a web developer in East Tennessee just getting my start in the field. My current goal is to take on my first junior developer role at a company where I can make a valuable contribution from day one. I look forward to joining a team of individuals who I can learn and grow with.
-        p My <a href="https://tannerwest.net/projects" title="Projects">projects page</a> will give you an idea of my current strengths. Most of my experience so far has been in front-end development. I've spent a lot of time building projects with Bootstrap, Pug, jQuery, and vanilla JavaScript. Most of my development has been done on Linux in a Node.js environment using Express. This site you're currently viewing is running as an Express app on a Digital Ocean Ubuntu droplet.
-        p Lately, I've also been dabbling in WordPress development with a goal of one day building custom themes and plugins. You can follow one of my WordPress projects at <a href="http://holstondigital.com" title="Holston Digital">Holston Digital</a> This path has let me build on the PHP skills I picked up developing my first ever web app last year. If you're curious about the details of that app, I'd love to talk to you about it.
-        p If you think I'd make a valuable addition to your team, I'd love to hear from you. I also welcome any feedback you may have regarding my site and my projects. You can reach me at west.tanner.j@gmail.com.
-
-    
-    div.row.entry#why-tnbbq
-      div.col-md-2
-      div.col-md-8
-        h1#title Why Tennessee Barbecue?
-        div.col-md-12
-          span.tag #Side Projects
-          span.tag #Why?
-        div.col-xs-6#author
-          span By: Tanner West
-        div.col-xs-6#date
-         span March 1, 2017
-        p#first
-          | This is the fourth entry in my "Why?" series in which I explain why I chose to undertake each of my side projects. These entries highlight the problems I aimed to solve and the lessons I learned from each project.
-        h3 The Problem
-        p Most of my side projects are pages for "mock" businesses that don't actually exist, but Tennessee Barbecue is a little different. I plan on turning it into a full-fledged website that people can actually use.
-        p The inspiration for TNBBQ came shortly after I discovered <a href="http://www.truecue.org/" title="True Cue">True Cue</a>, a website dedicated to listing "authentic" barbecue joints that cook their pork using wood or wood coals and serve it with a "regionally-appropriate" sauce or dip. I love the site, but I was disappointed to find that they only list joints in Kentucky and the Carolinas. I searched for a site that lists Tennessee barbecue restaurants, only to find that there isn't one. I decided to build one myself.
-        P Laying the groundwork for Tennessee Barbecue meant I had to get comfortable with using the Google Maps api and its custom markers feature. Doing so taught me a lot about JavaScript, especially when it comes to event handlers. I also use jQuery to populate a div with a list of barbecue joints that are currently within the maps bounds and to make the site interactive for users. All data is held in JSON format.
-        h3 What's Next for This Project?
-        p Currently I only have a couple dozen barbecue joints in my TNBBQ data, but I hope to build it into a comprehensive list of all Barbecue joints in Tennessee. I recently registered the domain "tnbarbecue.com" and I hope to move the site there soon. My ultimate goal is to visit these places, talk to the pitmasters who make babecue their life's work, and tell their stories on the site through essays and photos.
-    div.row.entry#why-ee
-      div.col-md-2
-      div.col-md-8
-        h1#title Why Element Editor?
-        div.col-md-12
-          span.tag #Side Projects
-          span.tag #Why?
-        div.col-xs-6#author
-          span By: Tanner West
-        div.col-xs-6#date
-         span March 1, 2017
-        p#first
-          | This is the third entry in my "Why?" series in which I explain why I chose to undertake each of my side projects. These entries highlight the problems I aimed to solve and the lessons I learned from each project.
-        h3 The Problem
-        p At my current job, I pioneered the use of the Bootstrap grid system to make our buyers' guides more visually interesting and easier for the reader to navigate. After formatting a few articles this way, I began to understand how it could quickly become a tedious task to edit web content that was nested in a jungle of .rows and .col-md-whatevers. I found that I needed a way to edit the content of a page one element at a time, simple by clicking on it, without having to be distracted by markup behind it.
-        h3 The Challenges
-        p Element Editor is a web page that takes a chunk of HTML and assigns a click listener to each element. When that listener is fired, the element is transformed into a textarea input  in which the user can edit the innerHTML content of the original element. The tag type of the original element is preserved as a "data-" HTML attribute. When the user clicks out of the textarea, it is transformed back into its original element type with the new innerHTML.
-        h3 What's Next for This Project?
-        p To use this tool currently, the user must write their HTML by hand and paste it into page to edit it. To make it even easier on content writers, I'd like to expand this project into a tool that gives the user "templates" with fields that they simply type their content into and click a button to wrap it in the appropriate HTML.
-
-
-
-    div.row.entry#why-hipset
-      div.col-md-2
-      div.col-md-8
-        h1#title Why Hipset?
-        div.col-md-12
-          span.tag #Side Projects
-          span.tag #Why?
-        div.col-xs-6#author
-          span By: Tanner West
-        div.col-xs-6#date
-         span February 20, 2017
-        p#first
-          | This is the second entry in my "Why?" series in which I explain why I chose to undertake each of my side projects. These entries highlight the problems I aimed to solve and the lessons I learned from each project.
-        h3 The Problem
-        p Hipset is a mock hipster fashion blog that I created to experiment with the type of layouts and design you see on media sites like <a href="http://vox.com" title="Vox Media">Vox</a> and <a href="http://qz.com" title="Quartz">Quartz</a>. I like how article links on those sites are presented as big images with the headline positioned to one edge of the div. I also like how each headline's background color changes when you hover over it.
-        h3 Challenges
-        p Like Moo Cow Lounge, this project taught me the value of using absolute positioning in CSS. It also helped me understand all the different values that <kbd>background</kbd> and <kbd>background-image</kbd> can take.
-        p I learned how to create a horizontal div that scrolls using the CSS <kbd>:hover</kbd> event and JavaScript, an effect I use as the interface for scrolling through the list of "guides" midway through the page.  I also discovered the <kbd>white-space</kbd> CSS property, which helped me get the text to display how I wanted it in those guide divs.
-        p This project was also one of the first in which I used pug mixins to display content from JSON data. I use mixins to display both the "guide" divs and the "articles" in the last section.
-
-    div.row.entry#why-mcl
-      div.col-md-2
-      div.col-md-8
-        h1#title Why Moo Cow Lounge?
-        div.col-md-12
-          span.tag #Side Projects
-          span.tag #Why?
-        div.col-xs-6#author
-          span By: Tanner West
-        div.col-xs-6#date
-         span February 12, 2017
-        p#first
-          | This is the first entry in my "Why?" series in which I explain why I chose to undertake each of my side projects. These entries highlight the problems I aimed to solve and the lessons I learned from each project.
-        h3 The Problem
-        p I made Moo Cow Lounge to practice building websites for businesses like restaurants, caf&eacute;s, and boutiques. The format I chose seems to be popular: you have a series of 100% vh divs, each populated with a piece of information about the business. This simple format is all that many businesses need to convey all the essential information to their customers.
-        h3 Challenges
-        p The biggest challenge I faced with Moo Cow Lounge was getting that first title/nav div to look right on all devices. This project taught me the value of using position: absolute to get elements to go where I want them to.
-        p One challenge I've yet to resolve is something that happens on Android browsers when the navigation bar disappears after you scroll the page. The very first background image resizes and it causes the whole page to do a little "jump" that just looks awful. The problem is discussed in detail in <a href="http://stackoverflow.com/questions/24944925/background-image-jumps-when-address-bar-hides-ios-android-mobile-chrome" title="Stack Overflow">this Stack Overflow thread</a>, but I can't seem to get any of those solutions to work.
-
-
-
-
-    div.row
-      div.col-md-2
-      div.col-md-8
-        h1#title Beginning JavaScript: The First Five Minutes
-        div.col-md-12
-          span.tag #JavaScript
-          span.tag #Beginning
-        div.col-xs-6#author
-          span By: Tanner West
-        div.col-xs-6#date
-         span February 04, 2017
-
-        p#first
-          
-          | I'm going to attempt to create the introduction to JavaScript that I wish I had when I started. I'm going to call this the "code first, ask questions later approach." I hope to show absolute beginners a few fun, interesting things that will introduce core concepts and hopefully spark a lasting interest in the language.
-        p
-          | The first thing I want you to do is press <kbd>ctrl + shift + j</kbd> on your keyboard. This action will open up your browser's developer tools to the "Console" tab. This is your browser's JavaScript console. Here you have access to your browser's JavaScript engine and all the elements on the page. You're probably eager to type something, so type in <kbd>document.getElementById("my-favorite")</kbd> and hit the "Enter" key.
-
-        h2#my-favorite Here Begins Your JavaScript Journey
-        p
-          | What you've just done is ask the browser to return the element or elements on the page that have an id of "my-favorite," which is obviously the heading just before this paragraph. I gave it that id when I wrote this article, but it could have been anything I wanted it to be.
-        p
-          | Now try this. In the console, press the "Up" arrow key to bring up the last thing you typed. Go to the end of that line and append it to say the following <kbd>document.getElementById("#my-favorite").innerHTML = "Learning JavaScript is So Much Fun"</kbd>.
-        p
-          | Look at what happened. You've just told the browser to change the content of that heading. This change only affects the copy of the page that's being displayed in your browser right now. Any changes will be lost if you reload or navigate away from the page.
-        p
-          | You may be wanting to experiment with your newfound power. Try playing with what you just learned by selecting the elements "second-favorite" and "first".
-
-        h2#second-favorite The Object of Affection  
-        p
-          | JavaScript is an object-oriented programming language. That means that much of the data you'll interact with comes in the form of an <i>object</i>. An object is simply a type of data that can include collection of more data in the form properties and methods (more on methods in a second). You're interacting with an object in the above example when you type "document". <a href="https://css-tricks.com/dom/" title="CSS Tricks: The DOM">Document is a JavaScript object</a> that represents the page you're currently viewing the browser.
-        p 
-          | The second piece of the line of code you used above, the ".getElementById()" part, is a <i>method</i> of the Document object that allows developers to return and change elements of the page by selecting them using unique IDs (I hope to teach you more about IDs in subsequent posts). Often, as is the case here, methods can take <i>arguments</i>. In this example, the argument is the ID of the HTML element you want the browser to return.
-
-
-        h2 Lesson Summary
-        p
-          | That's all I want to cover in this post. We've gone over quite a bit! You learned how to use your browser's JavaScript console to return HTML elements based on their IDs. In the process, you learned what people mean when they say that JavaScript is an object-oriented programming language.
-        p
-          | I also introduced you to the concept of methods, which are properties of objects that can be said to "do" something.
-        p 
-          | In the next post in this series, I'll introduce you to more data types like strings, numbers, and arrays. See you then!
+   
 
 
 
@@ -157,5 +31,7 @@ script.
   document.querySelector("#blog-link").classList.add('active');
 script(src='nav-button.js')
 script(src='js/headerscroller.js')
+
+
 
 
